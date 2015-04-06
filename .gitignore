@@ -1,4 +1,5 @@
 *.class
+*.bin
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -66,4 +67,4 @@ $RECYCLE.BIN/
 
 # Eclipse IDE files
 .settings/org.eclipse.jdt.core.prefs
-$bin/
+$/bin/
