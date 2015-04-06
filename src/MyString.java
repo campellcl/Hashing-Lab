@@ -38,20 +38,19 @@ public class MyString
       */
      @Override
      public int hashCode() {
-    	 //TODO: Resolve error that 2 runs of max size 20609
-    	 	// produce 2 different results. One exceptional, and one terrible. 
-    	 
-    	 //Java Library Hash Code:
-    	 	//s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
-    	 //My Hash Code:
     	 //Store lowest prime number in result. 
-    	 int result = 2;
-    	 //Create a temp var to house the hashcode of the array. 
+    	 int result = 2; 
+    	 //create a temp var to house the current hashcode. 
     	 int hc = 0; 
     	 //Create a hashcode for the char array. 
-    	 hc = Arrays.hashCode(myString.toCharArray());
-    	 //combine the hash code with a prime modifier:
-    	 result = 31 * result + hc; 
+    	 for (char c : myString.toCharArray()) {
+    		 hc = (int) c; 
+    		 if (hc != 0) {
+    			  result = 31 * hc + hc; 
+    		 } else {
+    			 //do nothing. NULL character. 
+    		 }
+    	 }
     	 return result; 
      }
      @Override
