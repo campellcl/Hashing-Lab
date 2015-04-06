@@ -63,3 +63,6 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+# Eclipse IDE files
+.settings/org.eclipse.jdt.core.prefs
