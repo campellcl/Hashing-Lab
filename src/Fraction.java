@@ -170,5 +170,59 @@ public class Fraction
                 newString = newString + newNumerator + "/" + denominator; 
          return newString;
     }
+    /**
+     * @author Chris Campell
+     * @date 4/6/2015
+     * Overridden hashCode method returns a Hash Code for an object of type 'Fraction'. 
+     * @return int -the calculated Hash Code for 'this' object. 
+     */
+    @Override
+    public int hashCode() {
+    	//TODO: Finish Implementation. 
+    	//System.err.println("Implementation Not Finished!"); 
+    	//1. Determine if fraction is double, float, or long. 
+    	//	This might not be necessary if we perform results on simplified numerator and denominator. 
+    	//2. Perform operations according to: 
+    	//	http://uet.vnu.edu.vn/~chauttm/e-books/java/Effective.Java.2nd.Edition.May.2008.3000th.Release.pdf
+    	//3. 
+    	return 31 * (numerator + denominator); 
+    }
+    /**
+     * @author Chris Campell
+     * @date 4/6/2015
+     * Overriden equals method compares 'this' with any Java 'Object'.
+     * @return boolean -true if equal, false otherwise.  
+     */
+    @Override
+    public boolean equals(Object obj) {
+    	Fraction target; 
+    	if (this == obj) {
+    		return true; 
+    	}
+    	else if (!(obj instanceof Fraction)) {
+    		return false; 
+    	} else {
+    		//Typecast to expected.  
+    		target = ((Fraction) obj);
+    		//check if both are invalid fractions
+    		if (target.defined == false && this.defined == false) {
+    			return true; 
+    		} else if (target.defined == true && this.defined == false) {
+    			return false; 
+    		} else if (target.defined == false && this.defined == true) {
+    			return false; 
+    		} else {
+    			//Both are valid fractions that are defined. 
+    			//reduce the target for the equality check. 
+    			target.reduce();
+    			this.reduce(); 
+    			if (target.numerator == this.numerator) {
+    				return (target.denominator == this.denominator);
+    			} else {
+    				return false; 
+    			}
+    		}
+    	}
+    }
 }
 

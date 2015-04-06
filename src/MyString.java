@@ -33,6 +33,8 @@ public class MyString
          return myString;
      }
      /**
+      * @author Chris Campell
+      * @date 4/6/2015
       * Creates a Hash Code representation for 'this'.
       * Adapted from: Josh Bloch's "Effective Java 2nd Edition"
       */
@@ -47,6 +49,8 @@ public class MyString
     	 return result; 
      }
      /**
+      * @author Chris Campell
+      * @date 4/6/2015
       * An appropriate equals method overridden from Object. 
       * @param obj -Any java Object to check for equality against. 
       * @return boolean -True if equal, false otherwise. 
