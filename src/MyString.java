@@ -39,24 +39,21 @@ public class MyString
      @Override
      public int hashCode() {
     	 //Store lowest prime number in result. 
-    	 int result = 2; 
-    	 //create a temp var to house the current hashcode. 
-    	 int hc = 0; 
+    	 int result = 1; 
     	 //Create a hashcode for the char array. 
     	 for (char c : myString.toCharArray()) {
-    		 hc = (int) c; 
-    		 if (hc != 0) {
-    			  result = 31 * hc + hc; 
-    		 } else {
-    			 //do nothing. NULL character. 
-    		 }
+    		 result = 31 * result + c; 
     	 }
     	 return result; 
      }
+     /**
+      * An appropriate equals method overridden from Object. 
+      * @param obj -Any java Object to check for equality against. 
+      * @return boolean -True if equal, false otherwise. 
+      */
      @Override
      public boolean equals(Object obj) {
     	 //Q: Why does the statement: if (obj instanceof this){} not work? 
-    	 
     	 if (obj == this) {
     		 return true; 
     	 }
