@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*********************************************************
    MyString is a wrapper class for a String, written so
    you can practice writing a hashCode() method.
@@ -47,9 +49,7 @@ public class MyString
     	 //Create a temp var to house the hashcode of the array. 
     	 int hc = 0; 
     	 //Create a hashcode for the char array. 
-    	 for (char c : myString.toCharArray()) {
-    		  hc += ((int) c);
-    	 }
+    	 hc = Arrays.hashCode(myString.toCharArray());
     	 //combine the hash code with a prime modifier:
     	 result = 31 * result + hc; 
     	 return result; 
