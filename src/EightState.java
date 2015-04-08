@@ -86,7 +86,23 @@ public class EightState
           for (int j = 0; j < 3; j++)
               board[i][j] = arr[index++];
    }
-
+   @Override
+   public int hashCode() {
+	   //TODO: Finish Implementation
+	   for (int i = 0; i < board.length; i++) {
+		   for (int j = 0; j < board[i].length; j++) {
+			   
+		   }
+	   }
+	   System.err.println("Implementation Not Finished!");
+	   return -1; 
+   }
+   @Override
+   public boolean equals(Object obj) {
+	   //TODO: Finish Implementation
+	   System.err.println("Implementation Not Finished!");
+	   return false; 
+   }
 
 }
 

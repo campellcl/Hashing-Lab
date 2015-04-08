@@ -184,7 +184,6 @@ public class Fraction
     	//	This might not be necessary if we perform results on simplified numerator and denominator. 
     	//2. Perform operations according to: 
     	//	http://uet.vnu.edu.vn/~chauttm/e-books/java/Effective.Java.2nd.Edition.May.2008.3000th.Release.pdf
-    	//3. 
     	return 31 * (numerator + denominator); 
     }
     /**
