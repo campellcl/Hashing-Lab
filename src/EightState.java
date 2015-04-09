@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /********************************************************************
 
    An EightState represents the tiles on the board in a Game Of Eight
@@ -88,20 +90,39 @@ public class EightState
    }
    @Override
    public int hashCode() {
+	   Stack<Integer> hc = new Stack<>(); 
+	   int result = 0; 
+	   int placeHolder = 1; 
 	   //TODO: Finish Implementation
 	   for (int i = 0; i < board.length; i++) {
 		   for (int j = 0; j < board[i].length; j++) {
-			   
+			   hc.push(board[i][j]);
 		   }
 	   }
-	   System.err.println("Implementation Not Finished!");
-	   return -1; 
+	   int i = 1; 
+	   while (!hc.isEmpty()) {
+		   result += (hc.pop() * i); 
+		   i *= 10;
+	   }
+	   return result;  
    }
    @Override
    public boolean equals(Object obj) {
-	   //TODO: Finish Implementation
-	   System.err.println("Implementation Not Finished!");
-	   return false; 
+	   if (this == obj) {
+		   return true; 
+	   } else if (!(obj instanceof EightState)) {
+		   return false; 
+	   } else {
+		   EightState compare = ((EightState) obj); 
+		   for (int i = 0; i < board.length; i++) {
+			   for (int j = 0; j < board[i].length; j++) {
+				   if (!(board[i][j] == compare.board[i][j])) {
+					   return false; 
+				   }
+			   }
+		   }
+		   return true; 
+	   }
    }
 
 }
